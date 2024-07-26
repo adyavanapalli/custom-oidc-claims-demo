@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  auth-azure:
+    name: Authenticate Azure
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: e3a8b7b4-fd52-4264-b11b-feb80b70bee0
+          subscription-id: a73ecc25-1b0e-4e97-83f6-26865dedc325
+          tenant-id: 2f8484c2-9449-4002-961b-aa61ae31ca74
